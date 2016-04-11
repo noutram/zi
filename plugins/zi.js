@@ -18,6 +18,8 @@ var gameState = gameInState["WAITINGFORPLAYERS"];
 //Countdown function
 function countDown(count) {
 	print("countdown: count = " + count);
+	ziPlayers.messageAllPlayers("Game starting in " + count);
+	
 	if (count == 0) {
 		//Time up
 		if (ziPlayers.numberOfPlayers() >= 	playersNeeded) {
@@ -27,7 +29,7 @@ function countDown(count) {
 		}
 		updateGameState();
 		return;
-	}
+	} 
 	
 	//Every second, call again
 	setTimeout( function() {
@@ -98,7 +100,8 @@ function gameStateOutputs() {
 //***************Called when the plugin is loaded or refreshed***************
 function startup( plugin ) {
 	print("********** event: startup **********");
-
+	ziPlayers.messageAllPlayers("Welcome to infection!");
+	
 	print("initialising infection");
 	//Reset game state
  	gameState = gameInState["WAITINGFORPLAYERS"];

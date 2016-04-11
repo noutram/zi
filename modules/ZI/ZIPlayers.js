@@ -15,6 +15,14 @@ function allPlayersOnServer() {
 	return utils.players();
 }
 
+//Message all players
+function messageAllPlayers(msg) {
+	var pls = allPlayersOnServer();
+	for (p in pls) {
+		echo(p, msg);
+	}
+}
+
 //Called after a refresh
 function addAllOnlinePlayersAsHuman() {
 	//Clear list
@@ -125,3 +133,4 @@ exports.playerExists = playerExists;
 exports.numberOfPlayers = numberOfPlayers;
 exports.playerStatus = playerStatus;
 exports.deletePlayer = deletePlayer;
+export.messageAllPlayers = messageAllPlayers;
