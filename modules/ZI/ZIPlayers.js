@@ -133,4 +133,4 @@ exports.playerExists = playerExists;
 exports.numberOfPlayers = numberOfPlayers;
 exports.playerStatus = playerStatus;
 exports.deletePlayer = deletePlayer;
-export.messageAllPlayers = messageAllPlayers;
+exports.messageAllPlayers = messageAllPlayers;
